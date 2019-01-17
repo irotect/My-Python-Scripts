@@ -7,6 +7,20 @@ This Repository is a collection of my python scripts.
 # Scripts
 ## <a href="../blob/master/LICENCE">Script name</a> <sub>(0.1.0)</sub>
 
+Author: **Mayank Thakur**
+
+Date Upadted: **07-09-2019**
+
+'''Converts M3U playlist to mp4 file using FFMPEG.
+
+Requirements:
+- Python 3.0 or higher
+- FFMPEG installed in system path.
+- Working internet connection for online M3U FIle.
+
+Usage:
+- Simply run this script with python and follow on screen instructions.'''
+
 
 
 
