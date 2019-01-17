@@ -1,4 +1,19 @@
 # -*- coding: utf-8 -*-
+"""
+Converts M3U playlist to mp4 file using FFMPEG.
+
+Requirements:
+    -> Python 3.0 or higher
+    -> FFMPEG installed in system path.
+    -> Working internet connection for online M3U FIle.
+
+Usage:
+    -> Simply run this script with python and follow on screen instructions.
+"""
+__script_name__ = "M3U Playlist to Mp4 Converter Using FFMPEG"
+__version__ = "0.1.0"
+__author__ = "Mayank Thakur"
+__date__ = "17-01-2019"
 
 import subprocess
 import os
