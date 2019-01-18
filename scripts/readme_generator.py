@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-This script generates Readme.md (markdown file) from the docstrings and other info from the files present in the '/scripts'.
+This script automatically generates GitHub styled Readme.md (markdown file)
+from the docstrings and other info from the files present in the '/scripts'.
 """
 
 __script_name__ = "Readme.md Generator"
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __author__ = "Mayank Thakur"
-__date__ = "17-01-2019"
+__date__ = "18-01-2019"
 
 import os
 import importlib
-
 
 root = "/scripts"
 base_template = """# My Python Scripts ![](https://img.shields.io/github/repo-size/irotect/My-Python-Scripts.svg)
@@ -69,7 +69,7 @@ if __name__ == "__main__":
     doc_data = []
     for file in files:
         blob = importlib.import_module(file.replace(".py", ""))
-        doc_data.append(single_template.format(fname=file, sname=blob.__script_name__, ver=blob.__version__, author = blob.__author__, date=blob.__date__, docstring=blob.__doc__))
+        doc_data.append(single_template.format(fname=file, sname=blob.__script_name__, ver=blob.__version__, author=blob.__author__, date=blob.__date__, docstring=blob.__doc__))
 
     with open("../README.md", "w") as readme:
-        readme.write(base_template.format(entry = " ".join(doc_data)))
+        readme.write(base_template.format(entry=" ".join(doc_data)))
