@@ -5,7 +5,7 @@ This script generates Readme.md (markdown file) from the docstrings and other in
 
 __script_name__ = "Readme.md Generator"
 __version__ = "0.1.0"
-__author__ = ("Mayank Thakur", "mackv210w@gmail.com", "https://irotect.likhopao.com/mayank.thakur")
+__author__ = "Mayank Thakur"
 __date__ = "17-01-2019"
 
 import os

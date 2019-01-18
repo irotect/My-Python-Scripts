@@ -28,7 +28,7 @@ Usage:
  
 ## <a href='script/readme_generator.py.py'>Readme.md Generator</a> <sub>(0.1.0)</sub> ![](https://img.shields.io/github/size/irotect/My-Python-Scripts/scripts/readme_generator.py.svg)
 
-Author: **('Mayank Thakur', 'mackv210w@gmail.com', 'https://irotect.likhopao.com/mayank.thakur')**
+Author: **Mayank Thakur**
 
 Date Updated: **17-01-2019**
 
