@@ -12,7 +12,6 @@ __date__ = "18-01-2019"
 import os
 import importlib
 
-root = "/scripts"
 base_template = """# My Python Scripts ![](https://img.shields.io/github/repo-size/irotect/My-Python-Scripts.svg)
 
 This Repository is a collection of my python scripts.
