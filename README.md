@@ -6,7 +6,7 @@ This Repository is a collection of my python scripts.
 # Scripts
 
 
-## <a href='script/m3u_to_mp4_converter.py.py'>M3U Playlist to Mp4 Converter Using FFMPEG</a> <sub>(0.1.0)</sub> ![](https://img.shields.io/github/size/irotect/My-Python-Scripts/scripts/m3u_to_mp4_converter.py.svg)
+## <a href='scripts/m3u_to_mp4_converter.py.py'>M3U Playlist to Mp4 Converter Using FFMPEG</a> <sub>(0.1.0)</sub> ![](https://img.shields.io/github/size/irotect/My-Python-Scripts/scripts/m3u_to_mp4_converter.py.svg)
 
 Author: **Mayank Thakur**
 
@@ -26,7 +26,7 @@ Usage:
 
 ```
  
-## <a href='script/readme_generator.py.py'>Readme.md Generator</a> <sub>(0.1.0)</sub> ![](https://img.shields.io/github/size/irotect/My-Python-Scripts/scripts/readme_generator.py.svg)
+## <a href='scripts/readme_generator.py.py'>Readme.md Generator</a> <sub>(0.1.0)</sub> ![](https://img.shields.io/github/size/irotect/My-Python-Scripts/scripts/readme_generator.py.svg)
 
 Author: **Mayank Thakur**
 
