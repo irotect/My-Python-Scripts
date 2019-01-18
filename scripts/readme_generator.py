@@ -70,6 +70,7 @@ if __name__ == "__main__":
     for file in files:
         blob = importlib.import_module(file.replace(".py", ""))
         doc_data.append(single_template.format(fname=file, sname=blob.__script_name__, ver=blob.__version__, author=blob.__author__, date=blob.__date__, docstring=blob.__doc__))
+        print("Added {}".format(file))
 
     with open("../README.md", "w") as readme:
         readme.write(base_template.format(entry=" ".join(doc_data)))

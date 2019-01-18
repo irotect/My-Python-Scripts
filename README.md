@@ -6,7 +6,7 @@ This Repository is a collection of my python scripts.
 # Scripts
 
 
-## <a href='scripts/m3u_to_mp4_converter.py.py'>M3U Playlist to Mp4 Converter Using FFMPEG</a> <sub>(0.1.0)</sub> ![](https://img.shields.io/github/size/irotect/My-Python-Scripts/scripts/m3u_to_mp4_converter.py.svg)
+## <a href='scripts/m3u_to_mp4_converter.py'>M3U Playlist to Mp4 Converter Using FFMPEG</a> <sub>(0.1.0)</sub> ![](https://img.shields.io/github/size/irotect/My-Python-Scripts/scripts/m3u_to_mp4_converter.py.svg)
 
 Author: **Mayank Thakur**
 
@@ -26,15 +26,16 @@ Usage:
 
 ```
  
-## <a href='scripts/readme_generator.py.py'>Readme.md Generator</a> <sub>(0.1.0)</sub> ![](https://img.shields.io/github/size/irotect/My-Python-Scripts/scripts/readme_generator.py.svg)
+## <a href='scripts/readme_generator.py'>Readme.md Generator</a> <sub>(0.1.1)</sub> ![](https://img.shields.io/github/size/irotect/My-Python-Scripts/scripts/readme_generator.py.svg)
 
 Author: **Mayank Thakur**
 
-Date Updated: **17-01-2019**
+Date Updated: **18-01-2019**
 
 ```Bash
 
-This script generates Readme.md (markdown file) from the docstrings and other info from the files present in the '/scripts'.
+This script automatically generates GitHub styled Readme.md (markdown file)
+from the docstrings and other info from the files present in the '/scripts'.
 
 ```
 
