@@ -1,9 +1,15 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'calci.ui'
+#
+# Created by: PyQt5 UI code generator 5.12
+#
+# WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class CalculatorUi(object):
-
+class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setWindowModality(QtCore.Qt.NonModal)
@@ -115,4 +121,5 @@ class CalculatorUi(object):
         self.inp1.setStatusTip(_translate("MainWindow", "Number1"))
         self.inp1.setWhatsThis(_translate("MainWindow", "Number 1"))
         self.inp1.setPlaceholderText(_translate("MainWindow", "Number 1"))
+
 
