@@ -1,4 +1,5 @@
 from PyQt5 import QtWidgets
+from PyQt5.QtCore import Qt
 
 from calculator import Ui_MainWindow  # importing our generated file
 
@@ -9,6 +10,7 @@ class Window(QtWidgets.QMainWindow):
 
     def __init__(self):
         super(Window, self).__init__()
+        self.setWindowFlags(Qt.CustomizeWindowHint | Qt.WindowSystemMenuHint | Qt.WindowCloseButtonHint | Qt.WindowMinMaxButtonsHint)
 
         self.ui = Ui_MainWindow()
 
@@ -18,6 +20,7 @@ class Window(QtWidgets.QMainWindow):
 
     def button_clicked(self):
         print(self.ui.inp1.text())
+        self.showMinimized()
 
         # check if user has entered a number
         if self.ui.inp1.text() == "":
