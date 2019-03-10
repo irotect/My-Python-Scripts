@@ -4,6 +4,7 @@ from PyQt5.QtCore import Qt
 from data_reader import Ui_MainWindow  # importing our generated file
 from pygments import highlight
 from pygments.lexers.python import Python3Lexer
+from pygments.lexers.text import TexLexer
 from pygments.formatters.html import HtmlFormatter
 
 import sys
@@ -95,7 +96,7 @@ class Window(QtWidgets.QMainWindow):
         else:
             self.ui.nextBtn.setDisabled(False)
 
-        self.ui.statementWebView.setHtml(highlight(self.json_data[self.current_index]['statement'], Python3Lexer(), HtmlFormatter(full=True, style="native")))
+        self.ui.statementWebView.setHtml(highlight(self.json_data[self.current_index]['statement'], TexLexer(), HtmlFormatter(full=True, style="native")))
         self.ui.solutionWebView.setHtml(highlight(self.json_data[self.current_index]['code'], Python3Lexer(), HtmlFormatter(full=True, style="native")))
 
     def triggered_action_reset(self):
