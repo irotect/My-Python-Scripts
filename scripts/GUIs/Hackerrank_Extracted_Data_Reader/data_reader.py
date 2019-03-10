@@ -235,7 +235,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.statementWebView.sizePolicy().hasHeightForWidth())
         self.statementWebView.setSizePolicy(sizePolicy)
         self.statementWebView.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
-        self.statementWebView.setUrl(QtCore.QUrl("file:///home/mayank/PycharmProjects/My-Python-Scripts/scripts/temp.html"))
+        self.statementWebView.setUrl(QtCore.QUrl("about:blank"))
         self.statementWebView.setObjectName("statementWebView")
         self.horizontalLayout.addWidget(self.statementWebView)
         self.solutionWebView = QWebView(self.centralwidget)

@@ -2,9 +2,13 @@ from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
 
 from data_reader import Ui_MainWindow  # importing our generated file
+from pygments import highlight
+from pygments.lexers.python import Python3Lexer
+from pygments.formatters.html import HtmlFormatter
 
 import sys
 import json
+import webbrowser
 
 
 class Window(QtWidgets.QMainWindow):
@@ -22,7 +26,6 @@ class Window(QtWidgets.QMainWindow):
         self.current_index = -1
         self.labels = []
         self.file_path = None
-        self.html_template = "{}"
 
         # declaring connections of objects to functions
         self.ui.actionOpen.triggered.connect(self.triggered_action_open)
@@ -39,8 +42,16 @@ class Window(QtWidgets.QMainWindow):
 
         self.ui.comboBox.currentIndexChanged.connect(self.open_file)
 
+        self.ui.testCaseBtn.clicked.connect(self.download_test_case)
+
+        self.ui.problemDownloadBtn.clicked.connect(self.download_problem_statement)
+
+        # setting initial condition of ui components
+        self.ui.nextBtn.setDisabled(True)
+        self.ui.previousBtn.setDisabled(True)
+
     def triggered_action_exit(self):
-        pass
+        self.close()
 
     def triggered_action_open(self):
         options = QtWidgets.QFileDialog.Options()
@@ -59,12 +70,12 @@ class Window(QtWidgets.QMainWindow):
         #self.open_file()
 
     def clean_labels(self):
-        temp_dict= dict()
+        temp_dict = dict()
         final = []
         for entry in self.labels:
             if entry in temp_dict:
                 temp_dict[entry] += 1
-                final.append("{} - {}".format(entry,temp_dict[entry]))
+                final.append("{} - {}".format(entry, temp_dict[entry]))
             else:
                 temp_dict[entry] = 0
                 final.append(entry)
@@ -72,7 +83,8 @@ class Window(QtWidgets.QMainWindow):
 
     def open_file(self):
         self.current_index = self.ui.comboBox.currentIndex()
-
+        if self.current_index == -1:
+            return
         if self.current_index == 0:
             self.ui.previousBtn.setDisabled(True)
         else:
@@ -83,27 +95,37 @@ class Window(QtWidgets.QMainWindow):
         else:
             self.ui.nextBtn.setDisabled(False)
 
-        self.ui.statementWebView.setHtml(self.html_template.format(self.json_data[self.current_index]['statement']))
-        self.ui.solutionWebView.setHtml(self.html_template.format(self.json_data[self.current_index]['code']))
+        self.ui.statementWebView.setHtml(highlight(self.json_data[self.current_index]['statement'], Python3Lexer(), HtmlFormatter(full=True, style="native")))
+        self.ui.solutionWebView.setHtml(highlight(self.json_data[self.current_index]['code'], Python3Lexer(), HtmlFormatter(full=True, style="native")))
 
     def triggered_action_reset(self):
-        pass
+        self.json_data = None
+        self.current_index = -1
+        self.labels = []
+        self.file_path = ""
+        self.ui.comboBox.clear()
+        self.ui.solutionWebView.setUrl("about:blank")
+        self.ui.statementWebView.setUrl("about:blank")
+        self.ui.nextBtn.setDisabled(True)
+        self.ui.previousBtn.setDisabled(True)
 
     def next_entry(self):
-        index = int(self.ui.comboBox.findText(str(self.labels[int(self.current_index)+1])))
-        print(self.current_index)
-        print(self.labels[self.current_index])
-        print(index)
-        self.ui.comboBox.setCurrentIndex(index)
-
+        self.ui.comboBox.setCurrentIndex(self.current_index+1)
 
     def previous_entry(self):
-        pass
-        #self.ui.comboBox.setCurrentIndex(self.ui.comboBox.findData(self.labels[self.current_index-1]))
+        self.ui.comboBox.setCurrentIndex(self.current_index-1)
 
-    def goto_entry(self):
-        pass
+    def download_test_case(self):
+        try:
+            webbrowser.open(self.json_data[self.current_index]["test_case_link"])
+        except:
+            pass
 
+    def download_problem_statement(self):
+        try:
+            webbrowser.open(self.json_data[self.current_index]["pdf_link"])
+        except:
+            pass
 
 
 app = QtWidgets.QApplication([])
