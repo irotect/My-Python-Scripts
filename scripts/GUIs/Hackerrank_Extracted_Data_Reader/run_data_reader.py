@@ -98,6 +98,7 @@ class Window(QtWidgets.QMainWindow):
 
         self.ui.statementWebView.setHtml(highlight(self.json_data[self.current_index]['statement'], TexLexer(), HtmlFormatter(full=True, style="native")))
         self.ui.solutionWebView.setHtml(highlight(self.json_data[self.current_index]['code'], Python3Lexer(), HtmlFormatter(full=True, style="native")))
+        self.ui.solutionWebView.page.toHtml(self.callable)
 
     def triggered_action_reset(self):
         self.json_data = None
@@ -109,6 +110,9 @@ class Window(QtWidgets.QMainWindow):
         self.ui.statementWebView.setUrl("about:blank")
         self.ui.nextBtn.setDisabled(True)
         self.ui.previousBtn.setDisabled(True)
+
+    def callable(self, data):
+        self.html = data
 
     def next_entry(self):
         self.ui.comboBox.setCurrentIndex(self.current_index+1)

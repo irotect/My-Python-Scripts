@@ -6,6 +6,24 @@ This Repository is a collection of my python scripts.
 # Scripts
 
 
+## <a href='scripts/diamond_star_pattern.py'>Diamond pattern using asterisk</a> <sub>(0.1.0)</sub> ![](https://img.shields.io/github/size/irotect/My-Python-Scripts/scripts/diamond_star_pattern.py.svg)
+
+Author: **Mayank Thakur**
+
+Date Updated: **27-02-2020**
+
+```Bash
+
+Generates diamond pattern using asterisk (*):
+
+Requirements:
+    -> Python 3.0 or higher
+
+Usage:
+    -> Call the diamond_pattern(x) function where x is the size of the diamond.
+
+```
+ 
 ## <a href='scripts/matrix_transpose.py'>Matrix Transposer</a> <sub>(0.1.0)</sub> ![](https://img.shields.io/github/size/irotect/My-Python-Scripts/scripts/matrix_transpose.py.svg)
 
 Author: **Mayank Thakur**
@@ -50,6 +68,22 @@ Date Updated: **18-01-2019**
 
 This script automatically generates GitHub styled Readme.md (markdown file)
 from the docstrings and other info from the files present in the '/scripts'.
+
+```
+ 
+## <a href='scripts/GCD.py'>Greatest Common Divisor (Euclidean Algorithm)</a> <sub>(0.1.0)</sub> ![](https://img.shields.io/github/size/irotect/My-Python-Scripts/scripts/GCD.py.svg)
+
+Author: **Mayank Thakur**
+
+Date Updated: **27-02-2020**
+
+```Bash
+
+Generates greatest common factor of 2 numbers using Euclidean Algorithm.
+
+Requirements:
+    -> Python 3.0 or higher
+
 
 ```
 
